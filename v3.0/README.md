@@ -13,7 +13,7 @@
 
 ## 📸 Screenshots
 
-<img src="v3.0\Output.png" alt="SURAS Banner" width="100%"/>
+<img src="Output.png" alt="Driver-Drowsiness-Detection-System" width="100%"/>
 
 ---
 
