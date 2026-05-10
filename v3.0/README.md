@@ -13,27 +13,7 @@
 
 ## 📸 Screenshots
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│  ◉  DRIVER DROWSINESS DETECTION SYSTEM           ●  CONNECTED   │
-├──────────────────────────────────────────────────────────────────┤
-│  MODE [Wireless ▼]  IP [192.168.1.5]  PORT [80]  PATH [/]       │
-│  [▶ CONNECT]  [■ STOP]  [↺ RESET]                               │
-├────────────────────────────┬─────────────────────────────────────┤
-│                            │  ┌─────────────────────────────┐   │
-│    Live Camera Feed        │  │         A L E R T           │   │
-│    (with eye landmarks     │  │   Eyes Open — Driver Alert  │   │
-│     and EAR overlay)       │  └─────────────────────────────┘   │
-│                            │  ┌───────────┐ ┌───────────────┐   │
-│                            │  │ EAR 0.31  │ │ PERCLOS  4.2% │   │
-│                            │  ├───────────┤ ├───────────────┤   │
-│                            │  │ BLINKS 12 │ │ FPS      29   │   │
-│                            │  └───────────┘ └───────────────┘   │
-│                            │  EAR TIME SERIES  ── 0.25 thresh   │
-│                            │  [real-time graph]                  │
-│                            │  ● FACE DETECTED                    │
-└────────────────────────────┴─────────────────────────────────────┘
-```
+<img src="Output.png" alt="Driver-Drowsiness-Detection-System" width="100%"/>
 
 ---
 
