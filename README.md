@@ -14,7 +14,7 @@
 ## 📸 Screenshots
 
 ```
-v3.0\Output.png
+<img src="v3.0\Output.png" alt="SURAS Banner" width="100%"/>
 ```
 
 ---
