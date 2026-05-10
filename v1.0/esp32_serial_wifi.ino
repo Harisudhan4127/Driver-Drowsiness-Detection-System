@@ -5,30 +5,30 @@
 // =========================
 // WIFI
 // =========================
-const char* ssid = "HOME";
-const char* password = "Home@4127";
+const char *ssid = "HOME";
+const char *password = "Home@4127";
 
 // =========================
 // CAMERA PINS
 // =========================
-#define PWDN_GPIO_NUM     32
-#define RESET_GPIO_NUM    -1
-#define XCLK_GPIO_NUM      0
-#define SIOD_GPIO_NUM     26
-#define SIOC_GPIO_NUM     27
+#define PWDN_GPIO_NUM 32
+#define RESET_GPIO_NUM -1
+#define XCLK_GPIO_NUM 0
+#define SIOD_GPIO_NUM 26
+#define SIOC_GPIO_NUM 27
 
-#define Y9_GPIO_NUM       35
-#define Y8_GPIO_NUM       34
-#define Y7_GPIO_NUM       39
-#define Y6_GPIO_NUM       36
-#define Y5_GPIO_NUM       21
-#define Y4_GPIO_NUM       19
-#define Y3_GPIO_NUM       18
-#define Y2_GPIO_NUM        5
+#define Y9_GPIO_NUM 35
+#define Y8_GPIO_NUM 34
+#define Y7_GPIO_NUM 39
+#define Y6_GPIO_NUM 36
+#define Y5_GPIO_NUM 21
+#define Y4_GPIO_NUM 19
+#define Y3_GPIO_NUM 18
+#define Y2_GPIO_NUM 5
 
-#define VSYNC_GPIO_NUM    25
-#define HREF_GPIO_NUM     23
-#define PCLK_GPIO_NUM     22
+#define VSYNC_GPIO_NUM 25
+#define HREF_GPIO_NUM 23
+#define PCLK_GPIO_NUM 22
 
 httpd_handle_t stream_httpd = NULL;
 
@@ -36,23 +36,24 @@ httpd_handle_t stream_httpd = NULL;
 // STREAM
 // =========================
 static esp_err_t stream_handler(
-    httpd_req_t *req
-){
+    httpd_req_t *req)
+{
 
-    camera_fb_t * fb = NULL;
+    camera_fb_t *fb = NULL;
 
     esp_err_t res = ESP_OK;
 
     res = httpd_resp_set_type(
         req,
-        "multipart/x-mixed-replace; boundary=frame"
-    );
+        "multipart/x-mixed-replace; boundary=frame");
 
-    while(true){
+    while (true)
+    {
 
         fb = esp_camera_fb_get();
 
-        if(!fb){
+        if (!fb)
+        {
             continue;
         }
 
@@ -64,36 +65,35 @@ static esp_err_t stream_handler(
             "--frame\r\n"
             "Content-Type: image/jpeg\r\n"
             "Content-Length: %u\r\n\r\n",
-            fb->len
-        );
+            fb->len);
 
         res = httpd_resp_send_chunk(
             req,
             part_buf,
-            hlen
-        );
+            hlen);
 
-        if(res == ESP_OK){
+        if (res == ESP_OK)
+        {
 
             res = httpd_resp_send_chunk(
                 req,
                 (const char *)fb->buf,
-                fb->len
-            );
+                fb->len);
         }
 
-        if(res == ESP_OK){
+        if (res == ESP_OK)
+        {
 
             res = httpd_resp_send_chunk(
                 req,
                 "\r\n",
-                2
-            );
+                2);
         }
 
         esp_camera_fb_return(fb);
 
-        if(res != ESP_OK){
+        if (res != ESP_OK)
+        {
             break;
         }
     }
@@ -104,7 +104,8 @@ static esp_err_t stream_handler(
 // =========================
 // SERVER
 // =========================
-void startCameraServer(){
+void startCameraServer()
+{
 
     httpd_config_t config =
         HTTPD_DEFAULT_CONFIG();
@@ -119,25 +120,24 @@ void startCameraServer(){
 
         .handler = stream_handler,
 
-        .user_ctx = NULL
-    };
+        .user_ctx = NULL};
 
-    if(httpd_start(
-        &stream_httpd,
-        &config
-    ) == ESP_OK){
+    if (httpd_start(
+            &stream_httpd,
+            &config) == ESP_OK)
+    {
 
         httpd_register_uri_handler(
             stream_httpd,
-            &stream_uri
-        );
+            &stream_uri);
     }
 }
 
 // =========================
 // SETUP
 // =========================
-void setup(){
+void setup()
+{
 
     Serial.begin(115200);
 
@@ -196,23 +196,21 @@ void setup(){
     config.grab_mode =
         CAMERA_GRAB_LATEST;
 
-    if(esp_camera_init(&config)
-       != ESP_OK){
+    if (esp_camera_init(&config) != ESP_OK)
+    {
 
         Serial.println(
-            "Camera Failed"
-        );
+            "Camera Failed");
 
         return;
     }
 
     WiFi.begin(
         ssid,
-        password
-    );
+        password);
 
-    while(WiFi.status()
-          != WL_CONNECTED){
+    while (WiFi.status() != WL_CONNECTED)
+    {
 
         delay(500);
 
@@ -222,13 +220,13 @@ void setup(){
     Serial.println("");
 
     Serial.println(
-        WiFi.localIP()
-    );
+        WiFi.localIP());
 
     startCameraServer();
 }
 
-void loop(){
+void loop()
+{
 
     delay(1);
 }

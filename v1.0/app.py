@@ -1,3 +1,4 @@
+
 # pip install ultralytics mediapipe pyqt5 pyserial opencv-python numpy
 
 import sys
