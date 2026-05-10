@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Alert', 'Microsleep', 'Yawn']
+
+roboflow:
+  workspace: drowsiness-detecion-yolov8
+  project: drowsiness-detectin-using-yolov8
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/drowsiness-detecion-yolov8/drowsiness-detectin-using-yolov8/dataset/1
