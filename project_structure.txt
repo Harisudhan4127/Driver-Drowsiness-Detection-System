@@ -1,0 +1,1096 @@
+E:\Git file\Driver-Drowsiness-Detection-System
+├── 📁 datasets
+│   ├── 📁 test
+│   │   ├── 📁 images
+│   │   │   ├── 📄 2623_jpg.rf.47b6274cf4abfc681aa03d278227689a.jpg
+│   │   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.1f579ca1a8839c1f5bd2660a957ae9c3.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-202_jpg.rf.ad48eb832c35734f7c8427aba3a353d8.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-239_jpg.rf.42821fd4a9167d3cbeb8eba7466927aa.jpg
+│   │   │   ├── 📄 STOCK-1_JPG.rf.53411851d555426d193f97b8c8c3e3e7.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.1969c1b75b0252f40aacf8db79ef36e6.jpg
+│   │   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.33e8797a3fff57c7af571013d504a43a.jpg
+│   │   │   ├── 📄 yawn-e6dd8982-3041-11ec-9a0f-302432df5bc8_jpg.rf.b1b959f54d2da7f15059bedb79e39e07.jpg
+│   │   │   └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.9b06360309de53777666ab2f4e8db878.jpg
+│   │   └── 📁 labels
+│   │       ├── 📄 2623_jpg.rf.47b6274cf4abfc681aa03d278227689a.txt
+│   │       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.1f579ca1a8839c1f5bd2660a957ae9c3.txt
+│   │       ├── 📄 P1042797_720_mp4-202_jpg.rf.ad48eb832c35734f7c8427aba3a353d8.txt
+│   │       ├── 📄 P1043106_720_mp4-239_jpg.rf.42821fd4a9167d3cbeb8eba7466927aa.txt
+│   │       ├── 📄 STOCK-1_JPG.rf.53411851d555426d193f97b8c8c3e3e7.txt
+│   │       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.1969c1b75b0252f40aacf8db79ef36e6.txt
+│   │       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.33e8797a3fff57c7af571013d504a43a.txt
+│   │       ├── 📄 yawn-e6dd8982-3041-11ec-9a0f-302432df5bc8_jpg.rf.b1b959f54d2da7f15059bedb79e39e07.txt
+│   │       └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.9b06360309de53777666ab2f4e8db878.txt
+│   ├── 📁 train
+│   │   ├── 📁 images
+│   │   │   ├── 📄 2571_jpg.rf.0e8910cedbabf7b5e833d8832d4541e5.jpg
+│   │   │   ├── 📄 2571_jpg.rf.bc92c99cb3526f44c895f3c981f343cf.jpg
+│   │   │   ├── 📄 2571_jpg.rf.da9073ec69c7e6831c4ad8f2500effc7.jpg
+│   │   │   ├── 📄 2571_jpg.rf.db511898c3026a17433634602973bb55.jpg
+│   │   │   ├── 📄 2571_jpg.rf.e454416bc76d9009b15a9d539c17b248.jpg
+│   │   │   ├── 📄 2571_jpg.rf.f26949be5dbf065c5f762ce7a7ad5926.jpg
+│   │   │   ├── 📄 2623_jpg.rf.6ad75906d9d57bf99152748102fba7ae.jpg
+│   │   │   ├── 📄 2623_jpg.rf.7173d9a697eac34da0f28e35790a9e0d.jpg
+│   │   │   ├── 📄 2623_jpg.rf.90189839fe9eaa62b2eaa369c98ed5cb.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.134349cafbc0115bf23b512e6ffc961f.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.1b0f297ac8da382f3e5f191af741c0f4.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.33655f279b9fad336c82547ce72832e4.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.a7b917bbd655511c70fa7e03fb261936.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c03fadcdef4a7c8b40f3e1fa1e750956.jpg
+│   │   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c45877f2b45f596a4bc80594838940fe.jpg
+│   │   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.245c06fb7a44dc0c6da05c0f87074fd4.jpg
+│   │   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.2998848271e4bcf19722664eb461e9e9.jpg
+│   │   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.d8ded3d9e1a0738fe0756643885d5a82.jpg
+│   │   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.32c47ec4ad8711a09c8dd501f76ab204.jpg
+│   │   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.61ce156fe31b92bdd7f456fa8b64ba76.jpg
+│   │   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.e1a4a480c1d66cf4a85aaed6e3f56529.jpg
+│   │   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.29037af3640cdc79fe96aefc6e813631.jpg
+│   │   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.4277072f0ec4e15c65fdf3cca39e9605.jpg
+│   │   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.eac521ebd9950d98447b07f7891ad5c0.jpg
+│   │   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.4c94f0aa43ab2880ee87f4d4f035ea9f.jpg
+│   │   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8a499beb3ee861b580af4e3509e7cc70.jpg
+│   │   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8e74f724708326725e5623a6ffdf9dcd.jpg
+│   │   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.15716e23fc5561d49960c116f0545bbf.jpg
+│   │   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.d926af002870bad5b944bd0130b19f2f.jpg
+│   │   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.e5df316943e218cce31b12a55c70c8c1.jpg
+│   │   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.17cee6bc69935ae22fba05075b2cef9a.jpg
+│   │   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.6c8afa1fca8fa314675d416b70262abb.jpg
+│   │   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.ceb227fb2a2a2a3f3cd64161377044fd.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.134bc791dd63d702ec92a7f8457679dd.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.43a7cceab512b7f091f67e45b5aa74b4.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.5171be7668acba734ccdc41ceed05d2c.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.b9f7e8c49a472740a07ce3b6b0e26d76.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.ba69660918a48ddba3105acf0d8b2c3c.jpg
+│   │   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.f8558ae8069a75057d7c4e4a1861a539.jpg
+│   │   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.09c24f63b726dfcec42333bfdf3effc9.jpg
+│   │   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.7526586aa52798cd3bf7b94ec84803e1.jpg
+│   │   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.d1075bb8c9e640023520c4d0e9b19065.jpg
+│   │   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.2714faac86e7b8b0c460d5fbde22e2c3.jpg
+│   │   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.6d3a788e974eb2ec702b44312e014707.jpg
+│   │   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.f9a8739029f283b43740eb6ba00ab82f.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.3094b29f2018344ecb50917504df582e.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.42bd245bfb75b3405d99eca6783ae66a.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.b09e8cf4e4ebab2cb35c3e21b2c0a93e.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.06716a28961cb4b0c8e177205dc16f99.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.512441617119276a167d90ffbc2dfc9b.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.8d8193b8d1da4119907feaba2555aabb.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.05604095cd91bd53a6fb1910732f8ea3.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.4e88d4a8a062b0857e84e11a30052edd.jpg
+│   │   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.5d165478ef3e186632de70a57b6d65a3.jpg
+│   │   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.66bb59d93c0d58fb94311e11b41ac046.jpg
+│   │   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.7d241373f62d0ff351f2171b376b54ea.jpg
+│   │   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.f319fbfcf73affe3d248968f330d8e76.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.1b1df3d4f54d6d415f2c86584b39c76a.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.7e01c45f6c07d1b8c7bb9e95129c82a3.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.f64d97c461c3949487894b2a276971ce.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.18f5fe2c5ef97183ad016852bd4e361d.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.6cd075b74a71cf2a3fc62e4286329a4a.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.e1aff74a4a1250c9b8515841edb8a1ff.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.6b7608a27c8a4a4a8267bd9a82481dff.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.780120c4b744489ebbf4496006e67ef0.jpg
+│   │   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.c51f939a5460e56aa14c0549e0501a61.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.7216b2fb60b47d4fef64e91b30201712.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.852dc8f7bbf0416ee2eef52a76f9cba0.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.d453ba6ac9bacc3ef732a43bbdf37565.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.6aea98b3393fbd33eb7ee1d527f512ca.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.cf0deb71d0fa3217aa52e51549e9e74c.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.fb3f56ad57afd89664095313668366af.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.04a9fbec53ab9d24dcf55da4dc8c6286.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.1aa4c287246fce0f005bdf763dfc7f1e.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.2ea7f818b2446e4b1451c783eecd9130.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.8383363a65ca5cafb5e0d6d2b8452b32.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.aa959e426f1d921218c2e0c815da3c35.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.dcc1a2e6028d4bc6beefcef7111d920e.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.0787e811cd8d7e8d308b1304d0e2bb11.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.4b6bf6fcbd99f07f15197141d1600b5c.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.646913215cac0d2869ff91ad75fa15e4.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.7694a84de6312b7309303503e5bf6c7d.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.b7b603292c8eaf32424ce4c920595c55.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.fea91f80088196c2620d69edae80be97.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.289edec064d3e8c509132381cf64555d.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.4de066313a29727bff0ec096480e70b8.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.8975594b43902c0d53b135c5c144819b.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.4e74f0df2563f27eaadb14458558084e.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.6dc05fc272f93d33b555eb5f2575aed8.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.acd540806e43dc61c6a4ef976a3d4de4.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.05f1114de4c4875b271c88ff4fa6f792.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.312f7194a85b7b9a54a16ccf2b820de9.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.3bfab87c81da3759f57b61c6a33680d1.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.d433f2cb7c1793c72833474ee257b4fa.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.e5ee58dafe7c12dea121c5bb4c615ff9.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.ec5cb8675dee13a8b1965a5587f38998.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.524c74a7e194526c68c91cdb189dbe74.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.664ef05ee109e0190ef36909395b8f15.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.ce5064f47c30e73e24732b46ae0abc16.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.031ec282821c66b3dac372c7077a199c.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.55cc74a5ad60a6e5a5a2f33328f1d197.jpg
+│   │   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.e2501c767de4421c1c85108febd4b46b.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.5ba34eb39d743d9e8c443088b3992320.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.7f8a4f2e286462fed3feb042ce5ef6dd.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.9c44a18fa1050690e8c4bbcace80292e.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.a2ad9f6c7210771a488e7d33b0708d0b.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.db9901ea2786140f54a44c7ee700d4d5.jpg
+│   │   │   ├── 📄 SEI_148666548_jpg.rf.f3c8f47dddc72632f10eda3e60d66c4e.jpg
+│   │   │   ├── 📄 STOCK-2_JPG.rf.00799382274c7a70472a8e2eaa149778.jpg
+│   │   │   ├── 📄 STOCK-2_JPG.rf.abbf674ebeb90e7ad47837c564bf87c1.jpg
+│   │   │   ├── 📄 STOCK-2_JPG.rf.b50594a1adbde8cee8cc9cc98ff4a039.jpg
+│   │   │   ├── 📄 TIRED-1_JPG.rf.1b75cf9148003a26e12fb6d5cdbd0a24.jpg
+│   │   │   ├── 📄 TIRED-1_JPG.rf.6e2c5c5b74261385fb0993a2678bec25.jpg
+│   │   │   ├── 📄 TIRED-1_JPG.rf.ab1c4a6c4c969ce4c5cd6f65e8e34911.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.0b8ac689d891bac583f4deb17ad518b1.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.1f06740fd8e3f23aa38de45492dd9eb6.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.79c56c949cba034d9eee83d0b4cacd2a.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.b593d643e6c20b39913ffa556b7ba834.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.c0254fb23cf1cc09a679f47cc0828295.jpg
+│   │   │   ├── 📄 w1600_png_jpg.rf.e4a3b5c46696a6e5a52ba1ffc0d76c9d.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.0fc8d737a738adb6e4202da9d0ee0cbe.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8757fb1e98264712e6dd2ddb3c828ab1.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8969af489e24f7393d3ee60848a3d3e5.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.aadb81333f198262e1787b54e190965e.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.c863b59ddf6d44d4fc267e3e003518be.jpg
+│   │   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.f25c620bb5ad9a62e4a4f70658f8cd62.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.0e48b3f28e44a59b9978a11701b76fb1.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.20080c2531835306b123e0017475428c.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.5ec10ac6b5a14972714448fb58cea4a8.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.731ddaad7aa6fbb61651d06ac2f26d95.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.b4be8ad974a78ba1fb17e7d2de7f3caf.jpg
+│   │   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.df86656456c22e046ea54db2364269eb.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.244182e0e6cd127d094ed8abef087e93.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.2f3db251d008afd20933ee9a16e3fe89.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.3fd1b542fd6c897fcf7bcc9a10d516c8.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.7909b3fa5d407933b7ce7d2a3afa7923.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.9da7a43780dcfd97dd9f246df7ef157f.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.cb186f1baa7ae23d800377b455ea9b9c.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.0e5a3579fba90a1b51e41a6d5c5c4784.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.4e216bf24e26c962c1dcaaf19d689e5c.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.7cc4bc2300727ddb871577887a82f6b5.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.bcc17500a86edc2b7aa61045f0290ba2.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.c9b2d211222946221d41d2d0731883b9.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.ca329b2c0f937d965a67361460852ede.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.4d140476b412f626a68704511f107dbf.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.891c0c0e84cb7ccb8469919352031746.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.dc4e42a1f68ce24e4a1a74e8647dac32.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.009a350984b82cee5da641612e45c162.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.47e993ff7b53f8d384556a5630b80c2a.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.496141d20a916df7116f64db33f9beee.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.4aa15795537ce384f5003644c638f0cc.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.a5b313ffc5919485000d7f73abd489f0.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.b90f4f0c289518291cc549f3aef25221.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.083bb5a83c96864d318fe0994c3f8cb3.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.3645fe10b3a611d3f51df656d54f4cc9.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.5026054ad78f54b0f9b69214c2063246.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.7143e4388e430c1cbe930d96ae699fce.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.c8d09c5e8432aadea229e395c3e69cb3.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.cf3eae94bf9e71e793a59ec51b64b307.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.0540027ca1eaf564e0549aaba85eaf2a.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.2e15d9615f480c2c95ecf4d687bb25c1.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.487498aac998d3205ed1323ec56a4953.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.5ef1b868392878a0bd6e8c5aa5c6ded5.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.9bba50fdd8d960297fb3c9cd9cf7894c.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.d6f99a34d5a47947a6722ffe42201b17.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.27ef689ebd14871b6ff0f0a161afe35a.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.cf4a4fa7b6603567be052643f55762a6.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.d349e6e14d9bf07a81aaf751900b0344.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.04ecabefabb57743625ea36252b8b5e9.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.10e5ceaab627415e01ba0d62c7686121.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.6e4164c1c989013fcfb16bc343960abf.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.21051e08244fcc863b241e0fccd66d21.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.31090aad9be4dc68e44c52d53d633e28.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.d8394f5c0a92ed72fa7b4a7ec53e35ef.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.32e17ce93fc8f8540b8b2e5bf398d597.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.8d58422b46fdbc580cae3edc989b9da1.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c54024f929a6e7af4dfe115fb4a45c3b.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c8d21a85806504ad1b41c5319ff1e075.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.cafe9e3b0ef6d4004c70fed9db4efd6f.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.fc1ff29b4cd7e203e8266a82891d87a1.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.4218bb9a63534e945634206a35fd8b40.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.9e7747784a1bf6ce9515924a00b81e93.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.dbef241f0af6ba0deec48d381a991d11.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.3d33447c098b023032a320cb7ec1bfb0.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.6505e11ad378b74a3ad1337bb19600d8.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.7d02141cc8723240e334d8d8e0d0b944.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.83255fbacd305b1e2709e7d6761115c1.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.83c10d52f39a3a7a5c6650e4f07985ad.jpg
+│   │   │   ├── 📄 woman-yawning_jpg.rf.be482f235e68cb0f7d23e6f145ffb4c1.jpg
+│   │   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.06ed04623b1099f2abd929ce0a061075.jpg
+│   │   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.7e84bc7832e2a3fcbc4432e3f44850fc.jpg
+│   │   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.d71de5fc2e560f9455a2bdfd8d9078a5.jpg
+│   │   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.568a8fd6ab578c9003d4b6821c9ad270.jpg
+│   │   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.63192402f2c9c2c6777ba86e97c59ab1.jpg
+│   │   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.6476b1a8cb4810e24179627817377f91.jpg
+│   │   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.2e0553c8098d3a97f02e0039062ed8c6.jpg
+│   │   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.6345f23a28352a11e650cc4f0275be8d.jpg
+│   │   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.c58b770facce8b33d6cfa6f7becd9449.jpg
+│   │   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.1792410e037c798502dfd8a2a8ea6ad8.jpg
+│   │   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.b0e4317c4a1739949fe73f3de0ab2e5f.jpg
+│   │   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.fc86928fcef0c7ea91da5d85e3f4b469.jpg
+│   │   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.04968f2d21ffc44ba9d8e49fd7357672.jpg
+│   │   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.07847d5e04f0fde0014b117326ba1d71.jpg
+│   │   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.7e3f3d4b10726fe87344304991a978e7.jpg
+│   │   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.99789d3b2b7d03ee0dd02fd3ad05973e.jpg
+│   │   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.bb5e566df29ce93375ad4a7fce377e5f.jpg
+│   │   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.dc123e7c7956c91b71931807278ec8ec.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3b02857e66d7cec63da9b828634f701d.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3ee002f677c700e3d4d1c412d8135096.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.92f6bb567b0583009016a93ff8df4e07.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.a692b33595b67571f21bb14dd47277a8.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.b6c3172d579af6144ffba399b0bfcaec.jpg
+│   │   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.fa3c45ad4bcbde8502c029dad05324a5.jpg
+│   │   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.5b792e1d1226b859d74ccbdebc1102e1.jpg
+│   │   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.72a6a72c23847deb4d28b10b789f5aed.jpg
+│   │   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.82eba17b7647f62913a11e366e9760d7.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.0eec3c2361f0c3c3cf11142f117aa37b.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.16da04eeac59f5e22f033fb3e0ca20d1.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.1997b6ba1306bbd50e0fd5dbe5d88ead.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.58804172403d4528ca159266eb496c34.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.63edeab36efdde35baf0918eda520c65.jpg
+│   │   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.dd1c9f093a2e217724f14dd17476e3c9.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.0a6c4abcdc254c8bb8c236008e5ec91b.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.425f33c1c4ec625650bc9a0742c24eab.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.4fe442865fb708506e0b621a7fc405c4.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.8afb16b970b5f7d0ab5a4475d07692a6.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.d31f497480f393b5e549a0a011b87655.jpg
+│   │   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.f0a8f501bd35056c3586bed86dade7db.jpg
+│   │   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.1af2ebd8fcd506ad2b7ffdc125f0279b.jpg
+│   │   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.3b5597d11523bbfc4a5eafabf2f2df78.jpg
+│   │   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.4df5315afb3406eee07685d03ec0f1d2.jpg
+│   │   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.02f62aeefb1e13ee9d7c32731555b839.jpg
+│   │   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.228d8cf17e06d9d12916362defb12bfe.jpg
+│   │   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.941119c515e496b68314245e250cd61e.jpg
+│   │   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.450bd4b45d826cef41a16ac78c5db068.jpg
+│   │   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.66f815d1349752b994f8d95f39853cbc.jpg
+│   │   │   └── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.8523da1d6f51938da82b37ce891a9bd0.jpg
+│   │   └── 📁 labels
+│   │       ├── 📄 2571_jpg.rf.0e8910cedbabf7b5e833d8832d4541e5.txt
+│   │       ├── 📄 2571_jpg.rf.bc92c99cb3526f44c895f3c981f343cf.txt
+│   │       ├── 📄 2571_jpg.rf.da9073ec69c7e6831c4ad8f2500effc7.txt
+│   │       ├── 📄 2571_jpg.rf.db511898c3026a17433634602973bb55.txt
+│   │       ├── 📄 2571_jpg.rf.e454416bc76d9009b15a9d539c17b248.txt
+│   │       ├── 📄 2571_jpg.rf.f26949be5dbf065c5f762ce7a7ad5926.txt
+│   │       ├── 📄 2623_jpg.rf.6ad75906d9d57bf99152748102fba7ae.txt
+│   │       ├── 📄 2623_jpg.rf.7173d9a697eac34da0f28e35790a9e0d.txt
+│   │       ├── 📄 2623_jpg.rf.90189839fe9eaa62b2eaa369c98ed5cb.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.134349cafbc0115bf23b512e6ffc961f.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.1b0f297ac8da382f3e5f191af741c0f4.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.33655f279b9fad336c82547ce72832e4.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.a7b917bbd655511c70fa7e03fb261936.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c03fadcdef4a7c8b40f3e1fa1e750956.txt
+│   │       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c45877f2b45f596a4bc80594838940fe.txt
+│   │       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.245c06fb7a44dc0c6da05c0f87074fd4.txt
+│   │       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.2998848271e4bcf19722664eb461e9e9.txt
+│   │       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.d8ded3d9e1a0738fe0756643885d5a82.txt
+│   │       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.32c47ec4ad8711a09c8dd501f76ab204.txt
+│   │       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.61ce156fe31b92bdd7f456fa8b64ba76.txt
+│   │       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.e1a4a480c1d66cf4a85aaed6e3f56529.txt
+│   │       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.29037af3640cdc79fe96aefc6e813631.txt
+│   │       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.4277072f0ec4e15c65fdf3cca39e9605.txt
+│   │       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.eac521ebd9950d98447b07f7891ad5c0.txt
+│   │       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.4c94f0aa43ab2880ee87f4d4f035ea9f.txt
+│   │       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8a499beb3ee861b580af4e3509e7cc70.txt
+│   │       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8e74f724708326725e5623a6ffdf9dcd.txt
+│   │       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.15716e23fc5561d49960c116f0545bbf.txt
+│   │       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.d926af002870bad5b944bd0130b19f2f.txt
+│   │       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.e5df316943e218cce31b12a55c70c8c1.txt
+│   │       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.17cee6bc69935ae22fba05075b2cef9a.txt
+│   │       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.6c8afa1fca8fa314675d416b70262abb.txt
+│   │       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.ceb227fb2a2a2a3f3cd64161377044fd.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.134bc791dd63d702ec92a7f8457679dd.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.43a7cceab512b7f091f67e45b5aa74b4.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.5171be7668acba734ccdc41ceed05d2c.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.b9f7e8c49a472740a07ce3b6b0e26d76.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.ba69660918a48ddba3105acf0d8b2c3c.txt
+│   │       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.f8558ae8069a75057d7c4e4a1861a539.txt
+│   │       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.09c24f63b726dfcec42333bfdf3effc9.txt
+│   │       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.7526586aa52798cd3bf7b94ec84803e1.txt
+│   │       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.d1075bb8c9e640023520c4d0e9b19065.txt
+│   │       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.2714faac86e7b8b0c460d5fbde22e2c3.txt
+│   │       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.6d3a788e974eb2ec702b44312e014707.txt
+│   │       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.f9a8739029f283b43740eb6ba00ab82f.txt
+│   │       ├── 📄 P1042797_720_mp4-201_jpg.rf.3094b29f2018344ecb50917504df582e.txt
+│   │       ├── 📄 P1042797_720_mp4-201_jpg.rf.42bd245bfb75b3405d99eca6783ae66a.txt
+│   │       ├── 📄 P1042797_720_mp4-201_jpg.rf.b09e8cf4e4ebab2cb35c3e21b2c0a93e.txt
+│   │       ├── 📄 P1042797_720_mp4-243_jpg.rf.06716a28961cb4b0c8e177205dc16f99.txt
+│   │       ├── 📄 P1042797_720_mp4-243_jpg.rf.512441617119276a167d90ffbc2dfc9b.txt
+│   │       ├── 📄 P1042797_720_mp4-243_jpg.rf.8d8193b8d1da4119907feaba2555aabb.txt
+│   │       ├── 📄 P1042797_720_mp4-250_jpg.rf.05604095cd91bd53a6fb1910732f8ea3.txt
+│   │       ├── 📄 P1042797_720_mp4-250_jpg.rf.4e88d4a8a062b0857e84e11a30052edd.txt
+│   │       ├── 📄 P1042797_720_mp4-250_jpg.rf.5d165478ef3e186632de70a57b6d65a3.txt
+│   │       ├── 📄 P1043080_720_mp4-13_jpg.rf.66bb59d93c0d58fb94311e11b41ac046.txt
+│   │       ├── 📄 P1043080_720_mp4-13_jpg.rf.7d241373f62d0ff351f2171b376b54ea.txt
+│   │       ├── 📄 P1043080_720_mp4-13_jpg.rf.f319fbfcf73affe3d248968f330d8e76.txt
+│   │       ├── 📄 P1043095_720_mp4-29_jpg.rf.1b1df3d4f54d6d415f2c86584b39c76a.txt
+│   │       ├── 📄 P1043095_720_mp4-29_jpg.rf.7e01c45f6c07d1b8c7bb9e95129c82a3.txt
+│   │       ├── 📄 P1043095_720_mp4-29_jpg.rf.f64d97c461c3949487894b2a276971ce.txt
+│   │       ├── 📄 P1043095_720_mp4-35_jpg.rf.18f5fe2c5ef97183ad016852bd4e361d.txt
+│   │       ├── 📄 P1043095_720_mp4-35_jpg.rf.6cd075b74a71cf2a3fc62e4286329a4a.txt
+│   │       ├── 📄 P1043095_720_mp4-35_jpg.rf.e1aff74a4a1250c9b8515841edb8a1ff.txt
+│   │       ├── 📄 P1043095_720_mp4-38_jpg.rf.6b7608a27c8a4a4a8267bd9a82481dff.txt
+│   │       ├── 📄 P1043095_720_mp4-38_jpg.rf.780120c4b744489ebbf4496006e67ef0.txt
+│   │       ├── 📄 P1043095_720_mp4-38_jpg.rf.c51f939a5460e56aa14c0549e0501a61.txt
+│   │       ├── 📄 P1043106_720_mp4-228_jpg.rf.7216b2fb60b47d4fef64e91b30201712.txt
+│   │       ├── 📄 P1043106_720_mp4-228_jpg.rf.852dc8f7bbf0416ee2eef52a76f9cba0.txt
+│   │       ├── 📄 P1043106_720_mp4-228_jpg.rf.d453ba6ac9bacc3ef732a43bbdf37565.txt
+│   │       ├── 📄 P1043106_720_mp4-233_jpg.rf.6aea98b3393fbd33eb7ee1d527f512ca.txt
+│   │       ├── 📄 P1043106_720_mp4-233_jpg.rf.cf0deb71d0fa3217aa52e51549e9e74c.txt
+│   │       ├── 📄 P1043106_720_mp4-233_jpg.rf.fb3f56ad57afd89664095313668366af.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.04a9fbec53ab9d24dcf55da4dc8c6286.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.1aa4c287246fce0f005bdf763dfc7f1e.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.2ea7f818b2446e4b1451c783eecd9130.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.8383363a65ca5cafb5e0d6d2b8452b32.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.aa959e426f1d921218c2e0c815da3c35.txt
+│   │       ├── 📄 P1043106_720_mp4-245_jpg.rf.dcc1a2e6028d4bc6beefcef7111d920e.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.0787e811cd8d7e8d308b1304d0e2bb11.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.4b6bf6fcbd99f07f15197141d1600b5c.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.646913215cac0d2869ff91ad75fa15e4.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.7694a84de6312b7309303503e5bf6c7d.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.b7b603292c8eaf32424ce4c920595c55.txt
+│   │       ├── 📄 P1043106_720_mp4-248_jpg.rf.fea91f80088196c2620d69edae80be97.txt
+│   │       ├── 📄 P1043125_720_mp4-16_jpg.rf.289edec064d3e8c509132381cf64555d.txt
+│   │       ├── 📄 P1043125_720_mp4-16_jpg.rf.4de066313a29727bff0ec096480e70b8.txt
+│   │       ├── 📄 P1043125_720_mp4-16_jpg.rf.8975594b43902c0d53b135c5c144819b.txt
+│   │       ├── 📄 P1043125_720_mp4-17_jpg.rf.4e74f0df2563f27eaadb14458558084e.txt
+│   │       ├── 📄 P1043125_720_mp4-17_jpg.rf.6dc05fc272f93d33b555eb5f2575aed8.txt
+│   │       ├── 📄 P1043125_720_mp4-17_jpg.rf.acd540806e43dc61c6a4ef976a3d4de4.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.05f1114de4c4875b271c88ff4fa6f792.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.312f7194a85b7b9a54a16ccf2b820de9.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.3bfab87c81da3759f57b61c6a33680d1.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.d433f2cb7c1793c72833474ee257b4fa.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.e5ee58dafe7c12dea121c5bb4c615ff9.txt
+│   │       ├── 📄 P1043125_720_mp4-20_jpg.rf.ec5cb8675dee13a8b1965a5587f38998.txt
+│   │       ├── 📄 P1043125_720_mp4-23_jpg.rf.524c74a7e194526c68c91cdb189dbe74.txt
+│   │       ├── 📄 P1043125_720_mp4-23_jpg.rf.664ef05ee109e0190ef36909395b8f15.txt
+│   │       ├── 📄 P1043125_720_mp4-23_jpg.rf.ce5064f47c30e73e24732b46ae0abc16.txt
+│   │       ├── 📄 P1043125_720_mp4-26_jpg.rf.031ec282821c66b3dac372c7077a199c.txt
+│   │       ├── 📄 P1043125_720_mp4-26_jpg.rf.55cc74a5ad60a6e5a5a2f33328f1d197.txt
+│   │       ├── 📄 P1043125_720_mp4-26_jpg.rf.e2501c767de4421c1c85108febd4b46b.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.5ba34eb39d743d9e8c443088b3992320.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.7f8a4f2e286462fed3feb042ce5ef6dd.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.9c44a18fa1050690e8c4bbcace80292e.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.a2ad9f6c7210771a488e7d33b0708d0b.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.db9901ea2786140f54a44c7ee700d4d5.txt
+│   │       ├── 📄 SEI_148666548_jpg.rf.f3c8f47dddc72632f10eda3e60d66c4e.txt
+│   │       ├── 📄 STOCK-2_JPG.rf.00799382274c7a70472a8e2eaa149778.txt
+│   │       ├── 📄 STOCK-2_JPG.rf.abbf674ebeb90e7ad47837c564bf87c1.txt
+│   │       ├── 📄 STOCK-2_JPG.rf.b50594a1adbde8cee8cc9cc98ff4a039.txt
+│   │       ├── 📄 TIRED-1_JPG.rf.1b75cf9148003a26e12fb6d5cdbd0a24.txt
+│   │       ├── 📄 TIRED-1_JPG.rf.6e2c5c5b74261385fb0993a2678bec25.txt
+│   │       ├── 📄 TIRED-1_JPG.rf.ab1c4a6c4c969ce4c5cd6f65e8e34911.txt
+│   │       ├── 📄 w1600_png_jpg.rf.0b8ac689d891bac583f4deb17ad518b1.txt
+│   │       ├── 📄 w1600_png_jpg.rf.1f06740fd8e3f23aa38de45492dd9eb6.txt
+│   │       ├── 📄 w1600_png_jpg.rf.79c56c949cba034d9eee83d0b4cacd2a.txt
+│   │       ├── 📄 w1600_png_jpg.rf.b593d643e6c20b39913ffa556b7ba834.txt
+│   │       ├── 📄 w1600_png_jpg.rf.c0254fb23cf1cc09a679f47cc0828295.txt
+│   │       ├── 📄 w1600_png_jpg.rf.e4a3b5c46696a6e5a52ba1ffc0d76c9d.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.0fc8d737a738adb6e4202da9d0ee0cbe.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8757fb1e98264712e6dd2ddb3c828ab1.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8969af489e24f7393d3ee60848a3d3e5.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.aadb81333f198262e1787b54e190965e.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.c863b59ddf6d44d4fc267e3e003518be.txt
+│   │       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.f25c620bb5ad9a62e4a4f70658f8cd62.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.0e48b3f28e44a59b9978a11701b76fb1.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.20080c2531835306b123e0017475428c.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.5ec10ac6b5a14972714448fb58cea4a8.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.731ddaad7aa6fbb61651d06ac2f26d95.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.b4be8ad974a78ba1fb17e7d2de7f3caf.txt
+│   │       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.df86656456c22e046ea54db2364269eb.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.244182e0e6cd127d094ed8abef087e93.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.2f3db251d008afd20933ee9a16e3fe89.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.3fd1b542fd6c897fcf7bcc9a10d516c8.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.7909b3fa5d407933b7ce7d2a3afa7923.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.9da7a43780dcfd97dd9f246df7ef157f.txt
+│   │       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.cb186f1baa7ae23d800377b455ea9b9c.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.0e5a3579fba90a1b51e41a6d5c5c4784.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.4e216bf24e26c962c1dcaaf19d689e5c.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.7cc4bc2300727ddb871577887a82f6b5.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.bcc17500a86edc2b7aa61045f0290ba2.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.c9b2d211222946221d41d2d0731883b9.txt
+│   │       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.ca329b2c0f937d965a67361460852ede.txt
+│   │       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.4d140476b412f626a68704511f107dbf.txt
+│   │       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.891c0c0e84cb7ccb8469919352031746.txt
+│   │       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.dc4e42a1f68ce24e4a1a74e8647dac32.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.009a350984b82cee5da641612e45c162.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.47e993ff7b53f8d384556a5630b80c2a.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.496141d20a916df7116f64db33f9beee.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.4aa15795537ce384f5003644c638f0cc.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.a5b313ffc5919485000d7f73abd489f0.txt
+│   │       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.b90f4f0c289518291cc549f3aef25221.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.083bb5a83c96864d318fe0994c3f8cb3.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.3645fe10b3a611d3f51df656d54f4cc9.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.5026054ad78f54b0f9b69214c2063246.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.7143e4388e430c1cbe930d96ae699fce.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.c8d09c5e8432aadea229e395c3e69cb3.txt
+│   │       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.cf3eae94bf9e71e793a59ec51b64b307.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.0540027ca1eaf564e0549aaba85eaf2a.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.2e15d9615f480c2c95ecf4d687bb25c1.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.487498aac998d3205ed1323ec56a4953.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.5ef1b868392878a0bd6e8c5aa5c6ded5.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.9bba50fdd8d960297fb3c9cd9cf7894c.txt
+│   │       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.d6f99a34d5a47947a6722ffe42201b17.txt
+│   │       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.27ef689ebd14871b6ff0f0a161afe35a.txt
+│   │       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.cf4a4fa7b6603567be052643f55762a6.txt
+│   │       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.d349e6e14d9bf07a81aaf751900b0344.txt
+│   │       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.04ecabefabb57743625ea36252b8b5e9.txt
+│   │       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.10e5ceaab627415e01ba0d62c7686121.txt
+│   │       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.6e4164c1c989013fcfb16bc343960abf.txt
+│   │       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.21051e08244fcc863b241e0fccd66d21.txt
+│   │       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.31090aad9be4dc68e44c52d53d633e28.txt
+│   │       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.d8394f5c0a92ed72fa7b4a7ec53e35ef.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.32e17ce93fc8f8540b8b2e5bf398d597.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.8d58422b46fdbc580cae3edc989b9da1.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c54024f929a6e7af4dfe115fb4a45c3b.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c8d21a85806504ad1b41c5319ff1e075.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.cafe9e3b0ef6d4004c70fed9db4efd6f.txt
+│   │       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.fc1ff29b4cd7e203e8266a82891d87a1.txt
+│   │       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.4218bb9a63534e945634206a35fd8b40.txt
+│   │       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.9e7747784a1bf6ce9515924a00b81e93.txt
+│   │       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.dbef241f0af6ba0deec48d381a991d11.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.3d33447c098b023032a320cb7ec1bfb0.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.6505e11ad378b74a3ad1337bb19600d8.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.7d02141cc8723240e334d8d8e0d0b944.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.83255fbacd305b1e2709e7d6761115c1.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.83c10d52f39a3a7a5c6650e4f07985ad.txt
+│   │       ├── 📄 woman-yawning_jpg.rf.be482f235e68cb0f7d23e6f145ffb4c1.txt
+│   │       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.06ed04623b1099f2abd929ce0a061075.txt
+│   │       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.7e84bc7832e2a3fcbc4432e3f44850fc.txt
+│   │       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.d71de5fc2e560f9455a2bdfd8d9078a5.txt
+│   │       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.568a8fd6ab578c9003d4b6821c9ad270.txt
+│   │       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.63192402f2c9c2c6777ba86e97c59ab1.txt
+│   │       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.6476b1a8cb4810e24179627817377f91.txt
+│   │       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.2e0553c8098d3a97f02e0039062ed8c6.txt
+│   │       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.6345f23a28352a11e650cc4f0275be8d.txt
+│   │       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.c58b770facce8b33d6cfa6f7becd9449.txt
+│   │       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.1792410e037c798502dfd8a2a8ea6ad8.txt
+│   │       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.b0e4317c4a1739949fe73f3de0ab2e5f.txt
+│   │       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.fc86928fcef0c7ea91da5d85e3f4b469.txt
+│   │       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.04968f2d21ffc44ba9d8e49fd7357672.txt
+│   │       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.07847d5e04f0fde0014b117326ba1d71.txt
+│   │       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.7e3f3d4b10726fe87344304991a978e7.txt
+│   │       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.99789d3b2b7d03ee0dd02fd3ad05973e.txt
+│   │       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.bb5e566df29ce93375ad4a7fce377e5f.txt
+│   │       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.dc123e7c7956c91b71931807278ec8ec.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3b02857e66d7cec63da9b828634f701d.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3ee002f677c700e3d4d1c412d8135096.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.92f6bb567b0583009016a93ff8df4e07.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.a692b33595b67571f21bb14dd47277a8.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.b6c3172d579af6144ffba399b0bfcaec.txt
+│   │       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.fa3c45ad4bcbde8502c029dad05324a5.txt
+│   │       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.5b792e1d1226b859d74ccbdebc1102e1.txt
+│   │       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.72a6a72c23847deb4d28b10b789f5aed.txt
+│   │       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.82eba17b7647f62913a11e366e9760d7.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.0eec3c2361f0c3c3cf11142f117aa37b.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.16da04eeac59f5e22f033fb3e0ca20d1.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.1997b6ba1306bbd50e0fd5dbe5d88ead.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.58804172403d4528ca159266eb496c34.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.63edeab36efdde35baf0918eda520c65.txt
+│   │       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.dd1c9f093a2e217724f14dd17476e3c9.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.0a6c4abcdc254c8bb8c236008e5ec91b.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.425f33c1c4ec625650bc9a0742c24eab.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.4fe442865fb708506e0b621a7fc405c4.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.8afb16b970b5f7d0ab5a4475d07692a6.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.d31f497480f393b5e549a0a011b87655.txt
+│   │       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.f0a8f501bd35056c3586bed86dade7db.txt
+│   │       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.1af2ebd8fcd506ad2b7ffdc125f0279b.txt
+│   │       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.3b5597d11523bbfc4a5eafabf2f2df78.txt
+│   │       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.4df5315afb3406eee07685d03ec0f1d2.txt
+│   │       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.02f62aeefb1e13ee9d7c32731555b839.txt
+│   │       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.228d8cf17e06d9d12916362defb12bfe.txt
+│   │       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.941119c515e496b68314245e250cd61e.txt
+│   │       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.450bd4b45d826cef41a16ac78c5db068.txt
+│   │       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.66f815d1349752b994f8d95f39853cbc.txt
+│   │       └── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.8523da1d6f51938da82b37ce891a9bd0.txt
+│   ├── 📁 valid
+│   │   ├── 📁 images
+│   │   │   ├── 📄 closed-eye-8737adc6-3043-11ec-a72a-302432df5bc8_jpg.rf.b27fba558b359e867a38728a680b3ff7.jpg
+│   │   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.decc603a4965e0c1af01d0aa4ab8d531.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-227_jpg.rf.d53b8417178daa9182a5ce1c4222a343.jpg
+│   │   │   ├── 📄 P1043106_720_mp4-242_jpg.rf.cc9d484a64b7b4409acd32d7225f2f59.jpg
+│   │   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.c3ef2f8695ac6070253fc3d5120d42e8.jpg
+│   │   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.862bac774dba12d23c7567a901f9962a.jpg
+│   │   │   ├── 📄 yawn-930e3cfe-3043-11ec-ad5b-302432df5bc8_jpg.rf.576106b54b5df27f8cdff98dcb3a4bc8.jpg
+│   │   │   ├── 📄 yawn-944fba00-3043-11ec-8bc6-302432df5bc8_jpg.rf.032ea1065bcd12ee358be4455bde88c2.jpg
+│   │   │   ├── 📄 yawn-de0de3fe-3042-11ec-8ef8-302432df5bc8_jpg.rf.024fe6ea34a26cbb43d51dff964960ac.jpg
+│   │   │   ├── 📄 yawn-ea80a412-3041-11ec-8ed0-302432df5bc8_jpg.rf.50ef523b47998c87d8a49188e462fe71.jpg
+│   │   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.49a4d96398a38a39036c5b7e0db8c449.jpg
+│   │   │   └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.38276c85564bcdd5a53eb765b6f6ad5b.jpg
+│   │   └── 📁 labels
+│   │       ├── 📄 closed-eye-8737adc6-3043-11ec-a72a-302432df5bc8_jpg.rf.b27fba558b359e867a38728a680b3ff7.txt
+│   │       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.decc603a4965e0c1af01d0aa4ab8d531.txt
+│   │       ├── 📄 P1043106_720_mp4-227_jpg.rf.d53b8417178daa9182a5ce1c4222a343.txt
+│   │       ├── 📄 P1043106_720_mp4-242_jpg.rf.cc9d484a64b7b4409acd32d7225f2f59.txt
+│   │       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.c3ef2f8695ac6070253fc3d5120d42e8.txt
+│   │       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.862bac774dba12d23c7567a901f9962a.txt
+│   │       ├── 📄 yawn-930e3cfe-3043-11ec-ad5b-302432df5bc8_jpg.rf.576106b54b5df27f8cdff98dcb3a4bc8.txt
+│   │       ├── 📄 yawn-944fba00-3043-11ec-8bc6-302432df5bc8_jpg.rf.032ea1065bcd12ee358be4455bde88c2.txt
+│   │       ├── 📄 yawn-de0de3fe-3042-11ec-8ef8-302432df5bc8_jpg.rf.024fe6ea34a26cbb43d51dff964960ac.txt
+│   │       ├── 📄 yawn-ea80a412-3041-11ec-8ed0-302432df5bc8_jpg.rf.50ef523b47998c87d8a49188e462fe71.txt
+│   │       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.49a4d96398a38a39036c5b7e0db8c449.txt
+│   │       └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.38276c85564bcdd5a53eb765b6f6ad5b.txt
+│   ├── 📄 data.yaml
+│   ├── 📄 README.dataset.txt
+│   └── 📄 README.roboflow.txt
+├── 📁 Firmware
+│   ├── 📄 drowsiness_detection_system.ino
+│   ├── 📄 esp32cam_unified.ino
+│   ├── 📄 esp32cam_wired_serial.ino
+│   └── 📄 esp32cam_wireless.ino
+├── 📁 model
+│   ├── 📄 best.onnx
+│   ├── 📄 best.pt
+│   ├── 📄 yolov8n.onnx
+│   └── 📄 yolov8n.pt
+├── 📁 Snap
+│   ├── 📄 drowsiness_detection_system.ino
+│   ├── 📄 drowsiness_ui.py
+│   ├── 📄 yolov8n.pt
+│   └── 📄 yolov8s.pt
+├── 📁 test
+│   ├── 📁 images
+│   │   ├── 📄 2623_jpg.rf.47b6274cf4abfc681aa03d278227689a.jpg
+│   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.1f579ca1a8839c1f5bd2660a957ae9c3.jpg
+│   │   ├── 📄 P1042797_720_mp4-202_jpg.rf.ad48eb832c35734f7c8427aba3a353d8.jpg
+│   │   ├── 📄 P1043106_720_mp4-239_jpg.rf.42821fd4a9167d3cbeb8eba7466927aa.jpg
+│   │   ├── 📄 STOCK-1_JPG.rf.53411851d555426d193f97b8c8c3e3e7.jpg
+│   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.1969c1b75b0252f40aacf8db79ef36e6.jpg
+│   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.33e8797a3fff57c7af571013d504a43a.jpg
+│   │   ├── 📄 yawn-e6dd8982-3041-11ec-9a0f-302432df5bc8_jpg.rf.b1b959f54d2da7f15059bedb79e39e07.jpg
+│   │   └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.9b06360309de53777666ab2f4e8db878.jpg
+│   └── 📁 labels
+│       ├── 📄 2623_jpg.rf.47b6274cf4abfc681aa03d278227689a.txt
+│       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.1f579ca1a8839c1f5bd2660a957ae9c3.txt
+│       ├── 📄 P1042797_720_mp4-202_jpg.rf.ad48eb832c35734f7c8427aba3a353d8.txt
+│       ├── 📄 P1043106_720_mp4-239_jpg.rf.42821fd4a9167d3cbeb8eba7466927aa.txt
+│       ├── 📄 STOCK-1_JPG.rf.53411851d555426d193f97b8c8c3e3e7.txt
+│       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.1969c1b75b0252f40aacf8db79ef36e6.txt
+│       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.33e8797a3fff57c7af571013d504a43a.txt
+│       ├── 📄 yawn-e6dd8982-3041-11ec-9a0f-302432df5bc8_jpg.rf.b1b959f54d2da7f15059bedb79e39e07.txt
+│       └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.9b06360309de53777666ab2f4e8db878.txt
+├── 📁 train
+│   ├── 📁 images
+│   │   ├── 📄 2571_jpg.rf.0e8910cedbabf7b5e833d8832d4541e5.jpg
+│   │   ├── 📄 2571_jpg.rf.bc92c99cb3526f44c895f3c981f343cf.jpg
+│   │   ├── 📄 2571_jpg.rf.da9073ec69c7e6831c4ad8f2500effc7.jpg
+│   │   ├── 📄 2571_jpg.rf.db511898c3026a17433634602973bb55.jpg
+│   │   ├── 📄 2571_jpg.rf.e454416bc76d9009b15a9d539c17b248.jpg
+│   │   ├── 📄 2571_jpg.rf.f26949be5dbf065c5f762ce7a7ad5926.jpg
+│   │   ├── 📄 2623_jpg.rf.6ad75906d9d57bf99152748102fba7ae.jpg
+│   │   ├── 📄 2623_jpg.rf.7173d9a697eac34da0f28e35790a9e0d.jpg
+│   │   ├── 📄 2623_jpg.rf.90189839fe9eaa62b2eaa369c98ed5cb.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.134349cafbc0115bf23b512e6ffc961f.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.1b0f297ac8da382f3e5f191af741c0f4.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.33655f279b9fad336c82547ce72832e4.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.a7b917bbd655511c70fa7e03fb261936.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c03fadcdef4a7c8b40f3e1fa1e750956.jpg
+│   │   ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c45877f2b45f596a4bc80594838940fe.jpg
+│   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.245c06fb7a44dc0c6da05c0f87074fd4.jpg
+│   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.2998848271e4bcf19722664eb461e9e9.jpg
+│   │   ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.d8ded3d9e1a0738fe0756643885d5a82.jpg
+│   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.32c47ec4ad8711a09c8dd501f76ab204.jpg
+│   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.61ce156fe31b92bdd7f456fa8b64ba76.jpg
+│   │   ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.e1a4a480c1d66cf4a85aaed6e3f56529.jpg
+│   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.29037af3640cdc79fe96aefc6e813631.jpg
+│   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.4277072f0ec4e15c65fdf3cca39e9605.jpg
+│   │   ├── 📄 istockphoto-1305355969-612x612_jpg.rf.eac521ebd9950d98447b07f7891ad5c0.jpg
+│   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.4c94f0aa43ab2880ee87f4d4f035ea9f.jpg
+│   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8a499beb3ee861b580af4e3509e7cc70.jpg
+│   │   ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8e74f724708326725e5623a6ffdf9dcd.jpg
+│   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.15716e23fc5561d49960c116f0545bbf.jpg
+│   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.d926af002870bad5b944bd0130b19f2f.jpg
+│   │   ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.e5df316943e218cce31b12a55c70c8c1.jpg
+│   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.17cee6bc69935ae22fba05075b2cef9a.jpg
+│   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.6c8afa1fca8fa314675d416b70262abb.jpg
+│   │   ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.ceb227fb2a2a2a3f3cd64161377044fd.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.134bc791dd63d702ec92a7f8457679dd.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.43a7cceab512b7f091f67e45b5aa74b4.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.5171be7668acba734ccdc41ceed05d2c.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.b9f7e8c49a472740a07ce3b6b0e26d76.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.ba69660918a48ddba3105acf0d8b2c3c.jpg
+│   │   ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.f8558ae8069a75057d7c4e4a1861a539.jpg
+│   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.09c24f63b726dfcec42333bfdf3effc9.jpg
+│   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.7526586aa52798cd3bf7b94ec84803e1.jpg
+│   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.d1075bb8c9e640023520c4d0e9b19065.jpg
+│   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.2714faac86e7b8b0c460d5fbde22e2c3.jpg
+│   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.6d3a788e974eb2ec702b44312e014707.jpg
+│   │   ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.f9a8739029f283b43740eb6ba00ab82f.jpg
+│   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.3094b29f2018344ecb50917504df582e.jpg
+│   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.42bd245bfb75b3405d99eca6783ae66a.jpg
+│   │   ├── 📄 P1042797_720_mp4-201_jpg.rf.b09e8cf4e4ebab2cb35c3e21b2c0a93e.jpg
+│   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.06716a28961cb4b0c8e177205dc16f99.jpg
+│   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.512441617119276a167d90ffbc2dfc9b.jpg
+│   │   ├── 📄 P1042797_720_mp4-243_jpg.rf.8d8193b8d1da4119907feaba2555aabb.jpg
+│   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.05604095cd91bd53a6fb1910732f8ea3.jpg
+│   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.4e88d4a8a062b0857e84e11a30052edd.jpg
+│   │   ├── 📄 P1042797_720_mp4-250_jpg.rf.5d165478ef3e186632de70a57b6d65a3.jpg
+│   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.66bb59d93c0d58fb94311e11b41ac046.jpg
+│   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.7d241373f62d0ff351f2171b376b54ea.jpg
+│   │   ├── 📄 P1043080_720_mp4-13_jpg.rf.f319fbfcf73affe3d248968f330d8e76.jpg
+│   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.1b1df3d4f54d6d415f2c86584b39c76a.jpg
+│   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.7e01c45f6c07d1b8c7bb9e95129c82a3.jpg
+│   │   ├── 📄 P1043095_720_mp4-29_jpg.rf.f64d97c461c3949487894b2a276971ce.jpg
+│   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.18f5fe2c5ef97183ad016852bd4e361d.jpg
+│   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.6cd075b74a71cf2a3fc62e4286329a4a.jpg
+│   │   ├── 📄 P1043095_720_mp4-35_jpg.rf.e1aff74a4a1250c9b8515841edb8a1ff.jpg
+│   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.6b7608a27c8a4a4a8267bd9a82481dff.jpg
+│   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.780120c4b744489ebbf4496006e67ef0.jpg
+│   │   ├── 📄 P1043095_720_mp4-38_jpg.rf.c51f939a5460e56aa14c0549e0501a61.jpg
+│   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.7216b2fb60b47d4fef64e91b30201712.jpg
+│   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.852dc8f7bbf0416ee2eef52a76f9cba0.jpg
+│   │   ├── 📄 P1043106_720_mp4-228_jpg.rf.d453ba6ac9bacc3ef732a43bbdf37565.jpg
+│   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.6aea98b3393fbd33eb7ee1d527f512ca.jpg
+│   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.cf0deb71d0fa3217aa52e51549e9e74c.jpg
+│   │   ├── 📄 P1043106_720_mp4-233_jpg.rf.fb3f56ad57afd89664095313668366af.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.04a9fbec53ab9d24dcf55da4dc8c6286.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.1aa4c287246fce0f005bdf763dfc7f1e.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.2ea7f818b2446e4b1451c783eecd9130.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.8383363a65ca5cafb5e0d6d2b8452b32.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.aa959e426f1d921218c2e0c815da3c35.jpg
+│   │   ├── 📄 P1043106_720_mp4-245_jpg.rf.dcc1a2e6028d4bc6beefcef7111d920e.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.0787e811cd8d7e8d308b1304d0e2bb11.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.4b6bf6fcbd99f07f15197141d1600b5c.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.646913215cac0d2869ff91ad75fa15e4.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.7694a84de6312b7309303503e5bf6c7d.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.b7b603292c8eaf32424ce4c920595c55.jpg
+│   │   ├── 📄 P1043106_720_mp4-248_jpg.rf.fea91f80088196c2620d69edae80be97.jpg
+│   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.289edec064d3e8c509132381cf64555d.jpg
+│   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.4de066313a29727bff0ec096480e70b8.jpg
+│   │   ├── 📄 P1043125_720_mp4-16_jpg.rf.8975594b43902c0d53b135c5c144819b.jpg
+│   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.4e74f0df2563f27eaadb14458558084e.jpg
+│   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.6dc05fc272f93d33b555eb5f2575aed8.jpg
+│   │   ├── 📄 P1043125_720_mp4-17_jpg.rf.acd540806e43dc61c6a4ef976a3d4de4.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.05f1114de4c4875b271c88ff4fa6f792.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.312f7194a85b7b9a54a16ccf2b820de9.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.3bfab87c81da3759f57b61c6a33680d1.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.d433f2cb7c1793c72833474ee257b4fa.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.e5ee58dafe7c12dea121c5bb4c615ff9.jpg
+│   │   ├── 📄 P1043125_720_mp4-20_jpg.rf.ec5cb8675dee13a8b1965a5587f38998.jpg
+│   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.524c74a7e194526c68c91cdb189dbe74.jpg
+│   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.664ef05ee109e0190ef36909395b8f15.jpg
+│   │   ├── 📄 P1043125_720_mp4-23_jpg.rf.ce5064f47c30e73e24732b46ae0abc16.jpg
+│   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.031ec282821c66b3dac372c7077a199c.jpg
+│   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.55cc74a5ad60a6e5a5a2f33328f1d197.jpg
+│   │   ├── 📄 P1043125_720_mp4-26_jpg.rf.e2501c767de4421c1c85108febd4b46b.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.5ba34eb39d743d9e8c443088b3992320.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.7f8a4f2e286462fed3feb042ce5ef6dd.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.9c44a18fa1050690e8c4bbcace80292e.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.a2ad9f6c7210771a488e7d33b0708d0b.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.db9901ea2786140f54a44c7ee700d4d5.jpg
+│   │   ├── 📄 SEI_148666548_jpg.rf.f3c8f47dddc72632f10eda3e60d66c4e.jpg
+│   │   ├── 📄 STOCK-2_JPG.rf.00799382274c7a70472a8e2eaa149778.jpg
+│   │   ├── 📄 STOCK-2_JPG.rf.abbf674ebeb90e7ad47837c564bf87c1.jpg
+│   │   ├── 📄 STOCK-2_JPG.rf.b50594a1adbde8cee8cc9cc98ff4a039.jpg
+│   │   ├── 📄 TIRED-1_JPG.rf.1b75cf9148003a26e12fb6d5cdbd0a24.jpg
+│   │   ├── 📄 TIRED-1_JPG.rf.6e2c5c5b74261385fb0993a2678bec25.jpg
+│   │   ├── 📄 TIRED-1_JPG.rf.ab1c4a6c4c969ce4c5cd6f65e8e34911.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.0b8ac689d891bac583f4deb17ad518b1.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.1f06740fd8e3f23aa38de45492dd9eb6.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.79c56c949cba034d9eee83d0b4cacd2a.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.b593d643e6c20b39913ffa556b7ba834.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.c0254fb23cf1cc09a679f47cc0828295.jpg
+│   │   ├── 📄 w1600_png_jpg.rf.e4a3b5c46696a6e5a52ba1ffc0d76c9d.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.0fc8d737a738adb6e4202da9d0ee0cbe.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8757fb1e98264712e6dd2ddb3c828ab1.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8969af489e24f7393d3ee60848a3d3e5.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.aadb81333f198262e1787b54e190965e.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.c863b59ddf6d44d4fc267e3e003518be.jpg
+│   │   ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.f25c620bb5ad9a62e4a4f70658f8cd62.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.0e48b3f28e44a59b9978a11701b76fb1.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.20080c2531835306b123e0017475428c.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.5ec10ac6b5a14972714448fb58cea4a8.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.731ddaad7aa6fbb61651d06ac2f26d95.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.b4be8ad974a78ba1fb17e7d2de7f3caf.jpg
+│   │   ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.df86656456c22e046ea54db2364269eb.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.244182e0e6cd127d094ed8abef087e93.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.2f3db251d008afd20933ee9a16e3fe89.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.3fd1b542fd6c897fcf7bcc9a10d516c8.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.7909b3fa5d407933b7ce7d2a3afa7923.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.9da7a43780dcfd97dd9f246df7ef157f.jpg
+│   │   ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.cb186f1baa7ae23d800377b455ea9b9c.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.0e5a3579fba90a1b51e41a6d5c5c4784.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.4e216bf24e26c962c1dcaaf19d689e5c.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.7cc4bc2300727ddb871577887a82f6b5.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.bcc17500a86edc2b7aa61045f0290ba2.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.c9b2d211222946221d41d2d0731883b9.jpg
+│   │   ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.ca329b2c0f937d965a67361460852ede.jpg
+│   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.4d140476b412f626a68704511f107dbf.jpg
+│   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.891c0c0e84cb7ccb8469919352031746.jpg
+│   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.dc4e42a1f68ce24e4a1a74e8647dac32.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.009a350984b82cee5da641612e45c162.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.47e993ff7b53f8d384556a5630b80c2a.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.496141d20a916df7116f64db33f9beee.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.4aa15795537ce384f5003644c638f0cc.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.a5b313ffc5919485000d7f73abd489f0.jpg
+│   │   ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.b90f4f0c289518291cc549f3aef25221.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.083bb5a83c96864d318fe0994c3f8cb3.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.3645fe10b3a611d3f51df656d54f4cc9.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.5026054ad78f54b0f9b69214c2063246.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.7143e4388e430c1cbe930d96ae699fce.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.c8d09c5e8432aadea229e395c3e69cb3.jpg
+│   │   ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.cf3eae94bf9e71e793a59ec51b64b307.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.0540027ca1eaf564e0549aaba85eaf2a.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.2e15d9615f480c2c95ecf4d687bb25c1.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.487498aac998d3205ed1323ec56a4953.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.5ef1b868392878a0bd6e8c5aa5c6ded5.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.9bba50fdd8d960297fb3c9cd9cf7894c.jpg
+│   │   ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.d6f99a34d5a47947a6722ffe42201b17.jpg
+│   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.27ef689ebd14871b6ff0f0a161afe35a.jpg
+│   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.cf4a4fa7b6603567be052643f55762a6.jpg
+│   │   ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.d349e6e14d9bf07a81aaf751900b0344.jpg
+│   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.04ecabefabb57743625ea36252b8b5e9.jpg
+│   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.10e5ceaab627415e01ba0d62c7686121.jpg
+│   │   ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.6e4164c1c989013fcfb16bc343960abf.jpg
+│   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.21051e08244fcc863b241e0fccd66d21.jpg
+│   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.31090aad9be4dc68e44c52d53d633e28.jpg
+│   │   ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.d8394f5c0a92ed72fa7b4a7ec53e35ef.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.32e17ce93fc8f8540b8b2e5bf398d597.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.8d58422b46fdbc580cae3edc989b9da1.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c54024f929a6e7af4dfe115fb4a45c3b.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c8d21a85806504ad1b41c5319ff1e075.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.cafe9e3b0ef6d4004c70fed9db4efd6f.jpg
+│   │   ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.fc1ff29b4cd7e203e8266a82891d87a1.jpg
+│   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.4218bb9a63534e945634206a35fd8b40.jpg
+│   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.9e7747784a1bf6ce9515924a00b81e93.jpg
+│   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.dbef241f0af6ba0deec48d381a991d11.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.3d33447c098b023032a320cb7ec1bfb0.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.6505e11ad378b74a3ad1337bb19600d8.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.7d02141cc8723240e334d8d8e0d0b944.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.83255fbacd305b1e2709e7d6761115c1.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.83c10d52f39a3a7a5c6650e4f07985ad.jpg
+│   │   ├── 📄 woman-yawning_jpg.rf.be482f235e68cb0f7d23e6f145ffb4c1.jpg
+│   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.06ed04623b1099f2abd929ce0a061075.jpg
+│   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.7e84bc7832e2a3fcbc4432e3f44850fc.jpg
+│   │   ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.d71de5fc2e560f9455a2bdfd8d9078a5.jpg
+│   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.568a8fd6ab578c9003d4b6821c9ad270.jpg
+│   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.63192402f2c9c2c6777ba86e97c59ab1.jpg
+│   │   ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.6476b1a8cb4810e24179627817377f91.jpg
+│   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.2e0553c8098d3a97f02e0039062ed8c6.jpg
+│   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.6345f23a28352a11e650cc4f0275be8d.jpg
+│   │   ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.c58b770facce8b33d6cfa6f7becd9449.jpg
+│   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.1792410e037c798502dfd8a2a8ea6ad8.jpg
+│   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.b0e4317c4a1739949fe73f3de0ab2e5f.jpg
+│   │   ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.fc86928fcef0c7ea91da5d85e3f4b469.jpg
+│   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.04968f2d21ffc44ba9d8e49fd7357672.jpg
+│   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.07847d5e04f0fde0014b117326ba1d71.jpg
+│   │   ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.7e3f3d4b10726fe87344304991a978e7.jpg
+│   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.99789d3b2b7d03ee0dd02fd3ad05973e.jpg
+│   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.bb5e566df29ce93375ad4a7fce377e5f.jpg
+│   │   ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.dc123e7c7956c91b71931807278ec8ec.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3b02857e66d7cec63da9b828634f701d.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3ee002f677c700e3d4d1c412d8135096.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.92f6bb567b0583009016a93ff8df4e07.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.a692b33595b67571f21bb14dd47277a8.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.b6c3172d579af6144ffba399b0bfcaec.jpg
+│   │   ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.fa3c45ad4bcbde8502c029dad05324a5.jpg
+│   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.5b792e1d1226b859d74ccbdebc1102e1.jpg
+│   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.72a6a72c23847deb4d28b10b789f5aed.jpg
+│   │   ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.82eba17b7647f62913a11e366e9760d7.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.0eec3c2361f0c3c3cf11142f117aa37b.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.16da04eeac59f5e22f033fb3e0ca20d1.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.1997b6ba1306bbd50e0fd5dbe5d88ead.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.58804172403d4528ca159266eb496c34.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.63edeab36efdde35baf0918eda520c65.jpg
+│   │   ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.dd1c9f093a2e217724f14dd17476e3c9.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.0a6c4abcdc254c8bb8c236008e5ec91b.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.425f33c1c4ec625650bc9a0742c24eab.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.4fe442865fb708506e0b621a7fc405c4.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.8afb16b970b5f7d0ab5a4475d07692a6.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.d31f497480f393b5e549a0a011b87655.jpg
+│   │   ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.f0a8f501bd35056c3586bed86dade7db.jpg
+│   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.1af2ebd8fcd506ad2b7ffdc125f0279b.jpg
+│   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.3b5597d11523bbfc4a5eafabf2f2df78.jpg
+│   │   ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.4df5315afb3406eee07685d03ec0f1d2.jpg
+│   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.02f62aeefb1e13ee9d7c32731555b839.jpg
+│   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.228d8cf17e06d9d12916362defb12bfe.jpg
+│   │   ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.941119c515e496b68314245e250cd61e.jpg
+│   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.450bd4b45d826cef41a16ac78c5db068.jpg
+│   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.66f815d1349752b994f8d95f39853cbc.jpg
+│   │   └── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.8523da1d6f51938da82b37ce891a9bd0.jpg
+│   └── 📁 labels
+│       ├── 📄 2571_jpg.rf.0e8910cedbabf7b5e833d8832d4541e5.txt
+│       ├── 📄 2571_jpg.rf.bc92c99cb3526f44c895f3c981f343cf.txt
+│       ├── 📄 2571_jpg.rf.da9073ec69c7e6831c4ad8f2500effc7.txt
+│       ├── 📄 2571_jpg.rf.db511898c3026a17433634602973bb55.txt
+│       ├── 📄 2571_jpg.rf.e454416bc76d9009b15a9d539c17b248.txt
+│       ├── 📄 2571_jpg.rf.f26949be5dbf065c5f762ce7a7ad5926.txt
+│       ├── 📄 2623_jpg.rf.6ad75906d9d57bf99152748102fba7ae.txt
+│       ├── 📄 2623_jpg.rf.7173d9a697eac34da0f28e35790a9e0d.txt
+│       ├── 📄 2623_jpg.rf.90189839fe9eaa62b2eaa369c98ed5cb.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.134349cafbc0115bf23b512e6ffc961f.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.1b0f297ac8da382f3e5f191af741c0f4.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.33655f279b9fad336c82547ce72832e4.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.a7b917bbd655511c70fa7e03fb261936.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c03fadcdef4a7c8b40f3e1fa1e750956.txt
+│       ├── 📄 closed-eye-16971d7a-3044-11ec-b714-302432df5bc8_jpg.rf.c45877f2b45f596a4bc80594838940fe.txt
+│       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.245c06fb7a44dc0c6da05c0f87074fd4.txt
+│       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.2998848271e4bcf19722664eb461e9e9.txt
+│       ├── 📄 closed-eye-19134b22-3044-11ec-8940-302432df5bc8_jpg.rf.d8ded3d9e1a0738fe0756643885d5a82.txt
+│       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.32c47ec4ad8711a09c8dd501f76ab204.txt
+│       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.61ce156fe31b92bdd7f456fa8b64ba76.txt
+│       ├── 📄 closed-eye-891a0602-3043-11ec-a115-302432df5bc8_jpg.rf.e1a4a480c1d66cf4a85aaed6e3f56529.txt
+│       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.29037af3640cdc79fe96aefc6e813631.txt
+│       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.4277072f0ec4e15c65fdf3cca39e9605.txt
+│       ├── 📄 istockphoto-1305355969-612x612_jpg.rf.eac521ebd9950d98447b07f7891ad5c0.txt
+│       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.4c94f0aa43ab2880ee87f4d4f035ea9f.txt
+│       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8a499beb3ee861b580af4e3509e7cc70.txt
+│       ├── 📄 istockphoto-1356376605-612x612_jpg.rf.8e74f724708326725e5623a6ffdf9dcd.txt
+│       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.15716e23fc5561d49960c116f0545bbf.txt
+│       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.d926af002870bad5b944bd0130b19f2f.txt
+│       ├── 📄 istockphoto-1453972626-1024x1024_jpg.rf.e5df316943e218cce31b12a55c70c8c1.txt
+│       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.17cee6bc69935ae22fba05075b2cef9a.txt
+│       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.6c8afa1fca8fa314675d416b70262abb.txt
+│       ├── 📄 istockphoto-489086245-1024x1024_jpg.rf.ceb227fb2a2a2a3f3cd64161377044fd.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.134bc791dd63d702ec92a7f8457679dd.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.43a7cceab512b7f091f67e45b5aa74b4.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.5171be7668acba734ccdc41ceed05d2c.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.b9f7e8c49a472740a07ce3b6b0e26d76.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.ba69660918a48ddba3105acf0d8b2c3c.txt
+│       ├── 📄 istockphoto-489196047-1024x1024_jpg.rf.f8558ae8069a75057d7c4e4a1861a539.txt
+│       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.09c24f63b726dfcec42333bfdf3effc9.txt
+│       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.7526586aa52798cd3bf7b94ec84803e1.txt
+│       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.d1075bb8c9e640023520c4d0e9b19065.txt
+│       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.2714faac86e7b8b0c460d5fbde22e2c3.txt
+│       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.6d3a788e974eb2ec702b44312e014707.txt
+│       ├── 📄 neutral-7b9a3062-3043-11ec-90bc-302432df5bc8_jpg.rf.f9a8739029f283b43740eb6ba00ab82f.txt
+│       ├── 📄 P1042797_720_mp4-201_jpg.rf.3094b29f2018344ecb50917504df582e.txt
+│       ├── 📄 P1042797_720_mp4-201_jpg.rf.42bd245bfb75b3405d99eca6783ae66a.txt
+│       ├── 📄 P1042797_720_mp4-201_jpg.rf.b09e8cf4e4ebab2cb35c3e21b2c0a93e.txt
+│       ├── 📄 P1042797_720_mp4-243_jpg.rf.06716a28961cb4b0c8e177205dc16f99.txt
+│       ├── 📄 P1042797_720_mp4-243_jpg.rf.512441617119276a167d90ffbc2dfc9b.txt
+│       ├── 📄 P1042797_720_mp4-243_jpg.rf.8d8193b8d1da4119907feaba2555aabb.txt
+│       ├── 📄 P1042797_720_mp4-250_jpg.rf.05604095cd91bd53a6fb1910732f8ea3.txt
+│       ├── 📄 P1042797_720_mp4-250_jpg.rf.4e88d4a8a062b0857e84e11a30052edd.txt
+│       ├── 📄 P1042797_720_mp4-250_jpg.rf.5d165478ef3e186632de70a57b6d65a3.txt
+│       ├── 📄 P1043080_720_mp4-13_jpg.rf.66bb59d93c0d58fb94311e11b41ac046.txt
+│       ├── 📄 P1043080_720_mp4-13_jpg.rf.7d241373f62d0ff351f2171b376b54ea.txt
+│       ├── 📄 P1043080_720_mp4-13_jpg.rf.f319fbfcf73affe3d248968f330d8e76.txt
+│       ├── 📄 P1043095_720_mp4-29_jpg.rf.1b1df3d4f54d6d415f2c86584b39c76a.txt
+│       ├── 📄 P1043095_720_mp4-29_jpg.rf.7e01c45f6c07d1b8c7bb9e95129c82a3.txt
+│       ├── 📄 P1043095_720_mp4-29_jpg.rf.f64d97c461c3949487894b2a276971ce.txt
+│       ├── 📄 P1043095_720_mp4-35_jpg.rf.18f5fe2c5ef97183ad016852bd4e361d.txt
+│       ├── 📄 P1043095_720_mp4-35_jpg.rf.6cd075b74a71cf2a3fc62e4286329a4a.txt
+│       ├── 📄 P1043095_720_mp4-35_jpg.rf.e1aff74a4a1250c9b8515841edb8a1ff.txt
+│       ├── 📄 P1043095_720_mp4-38_jpg.rf.6b7608a27c8a4a4a8267bd9a82481dff.txt
+│       ├── 📄 P1043095_720_mp4-38_jpg.rf.780120c4b744489ebbf4496006e67ef0.txt
+│       ├── 📄 P1043095_720_mp4-38_jpg.rf.c51f939a5460e56aa14c0549e0501a61.txt
+│       ├── 📄 P1043106_720_mp4-228_jpg.rf.7216b2fb60b47d4fef64e91b30201712.txt
+│       ├── 📄 P1043106_720_mp4-228_jpg.rf.852dc8f7bbf0416ee2eef52a76f9cba0.txt
+│       ├── 📄 P1043106_720_mp4-228_jpg.rf.d453ba6ac9bacc3ef732a43bbdf37565.txt
+│       ├── 📄 P1043106_720_mp4-233_jpg.rf.6aea98b3393fbd33eb7ee1d527f512ca.txt
+│       ├── 📄 P1043106_720_mp4-233_jpg.rf.cf0deb71d0fa3217aa52e51549e9e74c.txt
+│       ├── 📄 P1043106_720_mp4-233_jpg.rf.fb3f56ad57afd89664095313668366af.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.04a9fbec53ab9d24dcf55da4dc8c6286.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.1aa4c287246fce0f005bdf763dfc7f1e.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.2ea7f818b2446e4b1451c783eecd9130.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.8383363a65ca5cafb5e0d6d2b8452b32.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.aa959e426f1d921218c2e0c815da3c35.txt
+│       ├── 📄 P1043106_720_mp4-245_jpg.rf.dcc1a2e6028d4bc6beefcef7111d920e.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.0787e811cd8d7e8d308b1304d0e2bb11.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.4b6bf6fcbd99f07f15197141d1600b5c.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.646913215cac0d2869ff91ad75fa15e4.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.7694a84de6312b7309303503e5bf6c7d.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.b7b603292c8eaf32424ce4c920595c55.txt
+│       ├── 📄 P1043106_720_mp4-248_jpg.rf.fea91f80088196c2620d69edae80be97.txt
+│       ├── 📄 P1043125_720_mp4-16_jpg.rf.289edec064d3e8c509132381cf64555d.txt
+│       ├── 📄 P1043125_720_mp4-16_jpg.rf.4de066313a29727bff0ec096480e70b8.txt
+│       ├── 📄 P1043125_720_mp4-16_jpg.rf.8975594b43902c0d53b135c5c144819b.txt
+│       ├── 📄 P1043125_720_mp4-17_jpg.rf.4e74f0df2563f27eaadb14458558084e.txt
+│       ├── 📄 P1043125_720_mp4-17_jpg.rf.6dc05fc272f93d33b555eb5f2575aed8.txt
+│       ├── 📄 P1043125_720_mp4-17_jpg.rf.acd540806e43dc61c6a4ef976a3d4de4.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.05f1114de4c4875b271c88ff4fa6f792.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.312f7194a85b7b9a54a16ccf2b820de9.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.3bfab87c81da3759f57b61c6a33680d1.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.d433f2cb7c1793c72833474ee257b4fa.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.e5ee58dafe7c12dea121c5bb4c615ff9.txt
+│       ├── 📄 P1043125_720_mp4-20_jpg.rf.ec5cb8675dee13a8b1965a5587f38998.txt
+│       ├── 📄 P1043125_720_mp4-23_jpg.rf.524c74a7e194526c68c91cdb189dbe74.txt
+│       ├── 📄 P1043125_720_mp4-23_jpg.rf.664ef05ee109e0190ef36909395b8f15.txt
+│       ├── 📄 P1043125_720_mp4-23_jpg.rf.ce5064f47c30e73e24732b46ae0abc16.txt
+│       ├── 📄 P1043125_720_mp4-26_jpg.rf.031ec282821c66b3dac372c7077a199c.txt
+│       ├── 📄 P1043125_720_mp4-26_jpg.rf.55cc74a5ad60a6e5a5a2f33328f1d197.txt
+│       ├── 📄 P1043125_720_mp4-26_jpg.rf.e2501c767de4421c1c85108febd4b46b.txt
+│       ├── 📄 SEI_148666548_jpg.rf.5ba34eb39d743d9e8c443088b3992320.txt
+│       ├── 📄 SEI_148666548_jpg.rf.7f8a4f2e286462fed3feb042ce5ef6dd.txt
+│       ├── 📄 SEI_148666548_jpg.rf.9c44a18fa1050690e8c4bbcace80292e.txt
+│       ├── 📄 SEI_148666548_jpg.rf.a2ad9f6c7210771a488e7d33b0708d0b.txt
+│       ├── 📄 SEI_148666548_jpg.rf.db9901ea2786140f54a44c7ee700d4d5.txt
+│       ├── 📄 SEI_148666548_jpg.rf.f3c8f47dddc72632f10eda3e60d66c4e.txt
+│       ├── 📄 STOCK-2_JPG.rf.00799382274c7a70472a8e2eaa149778.txt
+│       ├── 📄 STOCK-2_JPG.rf.abbf674ebeb90e7ad47837c564bf87c1.txt
+│       ├── 📄 STOCK-2_JPG.rf.b50594a1adbde8cee8cc9cc98ff4a039.txt
+│       ├── 📄 TIRED-1_JPG.rf.1b75cf9148003a26e12fb6d5cdbd0a24.txt
+│       ├── 📄 TIRED-1_JPG.rf.6e2c5c5b74261385fb0993a2678bec25.txt
+│       ├── 📄 TIRED-1_JPG.rf.ab1c4a6c4c969ce4c5cd6f65e8e34911.txt
+│       ├── 📄 w1600_png_jpg.rf.0b8ac689d891bac583f4deb17ad518b1.txt
+│       ├── 📄 w1600_png_jpg.rf.1f06740fd8e3f23aa38de45492dd9eb6.txt
+│       ├── 📄 w1600_png_jpg.rf.79c56c949cba034d9eee83d0b4cacd2a.txt
+│       ├── 📄 w1600_png_jpg.rf.b593d643e6c20b39913ffa556b7ba834.txt
+│       ├── 📄 w1600_png_jpg.rf.c0254fb23cf1cc09a679f47cc0828295.txt
+│       ├── 📄 w1600_png_jpg.rf.e4a3b5c46696a6e5a52ba1ffc0d76c9d.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.0fc8d737a738adb6e4202da9d0ee0cbe.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8757fb1e98264712e6dd2ddb3c828ab1.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.8969af489e24f7393d3ee60848a3d3e5.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.aadb81333f198262e1787b54e190965e.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.c863b59ddf6d44d4fc267e3e003518be.txt
+│       ├── 📄 what-does-research-say-about-why-we-yawn-423531_jpg.rf.f25c620bb5ad9a62e4a4f70658f8cd62.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.0e48b3f28e44a59b9978a11701b76fb1.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.20080c2531835306b123e0017475428c.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.5ec10ac6b5a14972714448fb58cea4a8.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.731ddaad7aa6fbb61651d06ac2f26d95.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.b4be8ad974a78ba1fb17e7d2de7f3caf.txt
+│       ├── 📄 why-we-yawn-health-effects-of-excessive-yawning_jpg.rf.df86656456c22e046ea54db2364269eb.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.244182e0e6cd127d094ed8abef087e93.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.2f3db251d008afd20933ee9a16e3fe89.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.3fd1b542fd6c897fcf7bcc9a10d516c8.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.7909b3fa5d407933b7ce7d2a3afa7923.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.9da7a43780dcfd97dd9f246df7ef157f.txt
+│       ├── 📄 WIN_20211018_21_12_39_Pro_jpg.rf.cb186f1baa7ae23d800377b455ea9b9c.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.0e5a3579fba90a1b51e41a6d5c5c4784.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.4e216bf24e26c962c1dcaaf19d689e5c.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.7cc4bc2300727ddb871577887a82f6b5.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.bcc17500a86edc2b7aa61045f0290ba2.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.c9b2d211222946221d41d2d0731883b9.txt
+│       ├── 📄 WIN_20211018_21_12_42_Pro_jpg.rf.ca329b2c0f937d965a67361460852ede.txt
+│       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.4d140476b412f626a68704511f107dbf.txt
+│       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.891c0c0e84cb7ccb8469919352031746.txt
+│       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.dc4e42a1f68ce24e4a1a74e8647dac32.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.009a350984b82cee5da641612e45c162.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.47e993ff7b53f8d384556a5630b80c2a.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.496141d20a916df7116f64db33f9beee.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.4aa15795537ce384f5003644c638f0cc.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.a5b313ffc5919485000d7f73abd489f0.txt
+│       ├── 📄 WIN_20211018_21_12_47_Pro_jpg.rf.b90f4f0c289518291cc549f3aef25221.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.083bb5a83c96864d318fe0994c3f8cb3.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.3645fe10b3a611d3f51df656d54f4cc9.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.5026054ad78f54b0f9b69214c2063246.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.7143e4388e430c1cbe930d96ae699fce.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.c8d09c5e8432aadea229e395c3e69cb3.txt
+│       ├── 📄 WIN_20211018_21_12_49_Pro_jpg.rf.cf3eae94bf9e71e793a59ec51b64b307.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.0540027ca1eaf564e0549aaba85eaf2a.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.2e15d9615f480c2c95ecf4d687bb25c1.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.487498aac998d3205ed1323ec56a4953.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.5ef1b868392878a0bd6e8c5aa5c6ded5.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.9bba50fdd8d960297fb3c9cd9cf7894c.txt
+│       ├── 📄 WIN_20211018_21_12_50_Pro_jpg.rf.d6f99a34d5a47947a6722ffe42201b17.txt
+│       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.27ef689ebd14871b6ff0f0a161afe35a.txt
+│       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.cf4a4fa7b6603567be052643f55762a6.txt
+│       ├── 📄 WIN_20211018_21_12_52_Pro_jpg.rf.d349e6e14d9bf07a81aaf751900b0344.txt
+│       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.04ecabefabb57743625ea36252b8b5e9.txt
+│       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.10e5ceaab627415e01ba0d62c7686121.txt
+│       ├── 📄 WIN_20211018_21_12_55_Pro_jpg.rf.6e4164c1c989013fcfb16bc343960abf.txt
+│       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.21051e08244fcc863b241e0fccd66d21.txt
+│       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.31090aad9be4dc68e44c52d53d633e28.txt
+│       ├── 📄 WIN_20211018_21_12_59_Pro_jpg.rf.d8394f5c0a92ed72fa7b4a7ec53e35ef.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.32e17ce93fc8f8540b8b2e5bf398d597.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.8d58422b46fdbc580cae3edc989b9da1.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c54024f929a6e7af4dfe115fb4a45c3b.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.c8d21a85806504ad1b41c5319ff1e075.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.cafe9e3b0ef6d4004c70fed9db4efd6f.txt
+│       ├── 📄 WIN_20211018_21_13_00_Pro_jpg.rf.fc1ff29b4cd7e203e8266a82891d87a1.txt
+│       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.4218bb9a63534e945634206a35fd8b40.txt
+│       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.9e7747784a1bf6ce9515924a00b81e93.txt
+│       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.dbef241f0af6ba0deec48d381a991d11.txt
+│       ├── 📄 woman-yawning_jpg.rf.3d33447c098b023032a320cb7ec1bfb0.txt
+│       ├── 📄 woman-yawning_jpg.rf.6505e11ad378b74a3ad1337bb19600d8.txt
+│       ├── 📄 woman-yawning_jpg.rf.7d02141cc8723240e334d8d8e0d0b944.txt
+│       ├── 📄 woman-yawning_jpg.rf.83255fbacd305b1e2709e7d6761115c1.txt
+│       ├── 📄 woman-yawning_jpg.rf.83c10d52f39a3a7a5c6650e4f07985ad.txt
+│       ├── 📄 woman-yawning_jpg.rf.be482f235e68cb0f7d23e6f145ffb4c1.txt
+│       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.06ed04623b1099f2abd929ce0a061075.txt
+│       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.7e84bc7832e2a3fcbc4432e3f44850fc.txt
+│       ├── 📄 yawn-01fd3312-3045-11ec-8da2-302432df5bc8_jpg.rf.d71de5fc2e560f9455a2bdfd8d9078a5.txt
+│       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.568a8fd6ab578c9003d4b6821c9ad270.txt
+│       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.63192402f2c9c2c6777ba86e97c59ab1.txt
+│       ├── 📄 yawn-029bd49a-3045-11ec-bb03-302432df5bc8_jpg.rf.6476b1a8cb4810e24179627817377f91.txt
+│       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.2e0553c8098d3a97f02e0039062ed8c6.txt
+│       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.6345f23a28352a11e650cc4f0275be8d.txt
+│       ├── 📄 yawn-21b27ec6-3044-11ec-be7f-302432df5bc8_jpg.rf.c58b770facce8b33d6cfa6f7becd9449.txt
+│       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.1792410e037c798502dfd8a2a8ea6ad8.txt
+│       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.b0e4317c4a1739949fe73f3de0ab2e5f.txt
+│       ├── 📄 yawn-29cf6aa8-3044-11ec-90d1-302432df5bc8_jpg.rf.fc86928fcef0c7ea91da5d85e3f4b469.txt
+│       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.04968f2d21ffc44ba9d8e49fd7357672.txt
+│       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.07847d5e04f0fde0014b117326ba1d71.txt
+│       ├── 📄 yawn-32650e12-3043-11ec-a95e-302432df5bc8_jpg.rf.7e3f3d4b10726fe87344304991a978e7.txt
+│       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.99789d3b2b7d03ee0dd02fd3ad05973e.txt
+│       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.bb5e566df29ce93375ad4a7fce377e5f.txt
+│       ├── 📄 yawn-89cb018a-3044-11ec-9fdb-302432df5bc8_jpg.rf.dc123e7c7956c91b71931807278ec8ec.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3b02857e66d7cec63da9b828634f701d.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.3ee002f677c700e3d4d1c412d8135096.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.92f6bb567b0583009016a93ff8df4e07.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.a692b33595b67571f21bb14dd47277a8.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.b6c3172d579af6144ffba399b0bfcaec.txt
+│       ├── 📄 yawn-912cae1c-3043-11ec-9c06-302432df5bc8_jpg.rf.fa3c45ad4bcbde8502c029dad05324a5.txt
+│       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.5b792e1d1226b859d74ccbdebc1102e1.txt
+│       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.72a6a72c23847deb4d28b10b789f5aed.txt
+│       ├── 📄 yawn-912f7426-3044-11ec-bcec-302432df5bc8_jpg.rf.82eba17b7647f62913a11e366e9760d7.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.0eec3c2361f0c3c3cf11142f117aa37b.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.16da04eeac59f5e22f033fb3e0ca20d1.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.1997b6ba1306bbd50e0fd5dbe5d88ead.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.58804172403d4528ca159266eb496c34.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.63edeab36efdde35baf0918eda520c65.txt
+│       ├── 📄 yawn-926d616e-3043-11ec-9a3e-302432df5bc8_jpg.rf.dd1c9f093a2e217724f14dd17476e3c9.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.0a6c4abcdc254c8bb8c236008e5ec91b.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.425f33c1c4ec625650bc9a0742c24eab.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.4fe442865fb708506e0b621a7fc405c4.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.8afb16b970b5f7d0ab5a4475d07692a6.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.d31f497480f393b5e549a0a011b87655.txt
+│       ├── 📄 yawn-93127eba-3044-11ec-8e95-302432df5bc8_jpg.rf.f0a8f501bd35056c3586bed86dade7db.txt
+│       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.1af2ebd8fcd506ad2b7ffdc125f0279b.txt
+│       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.3b5597d11523bbfc4a5eafabf2f2df78.txt
+│       ├── 📄 yawn-e3b4322e-3042-11ec-b1e5-302432df5bc8_jpg.rf.4df5315afb3406eee07685d03ec0f1d2.txt
+│       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.02f62aeefb1e13ee9d7c32731555b839.txt
+│       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.228d8cf17e06d9d12916362defb12bfe.txt
+│       ├── 📄 yawn-eced2ca4-3041-11ec-af70-302432df5bc8_jpg.rf.941119c515e496b68314245e250cd61e.txt
+│       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.450bd4b45d826cef41a16ac78c5db068.txt
+│       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.66f815d1349752b994f8d95f39853cbc.txt
+│       └── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.8523da1d6f51938da82b37ce891a9bd0.txt
+├── 📁 v1.0
+│   ├── 📄 alarm.mp3
+│   ├── 📄 app.py
+│   ├── 📄 esp32_serial_wifi.ino
+│   └── 📄 README.md
+├── 📁 v2.0
+│   ├── 📄 app.py
+│   ├── 📄 drowsiness_detection_system.ino
+│   ├── 📄 files.zip
+│   ├── 📄 README.md
+│   └── 📄 requirements.txt
+├── 📁 v3.0
+│   ├── 📄 app.py
+│   ├── 📄 esp32cam_unified.ino
+│   ├── 📄 esp32cam_wired_serial.ino
+│   ├── 📄 esp32cam_wireless.ino
+│   ├── 📄 README.md
+│   └── 📄 requirements.txt
+├── 📁 valid
+│   ├── 📁 images
+│   │   ├── 📄 closed-eye-8737adc6-3043-11ec-a72a-302432df5bc8_jpg.rf.b27fba558b359e867a38728a680b3ff7.jpg
+│   │   ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.decc603a4965e0c1af01d0aa4ab8d531.jpg
+│   │   ├── 📄 P1043106_720_mp4-227_jpg.rf.d53b8417178daa9182a5ce1c4222a343.jpg
+│   │   ├── 📄 P1043106_720_mp4-242_jpg.rf.cc9d484a64b7b4409acd32d7225f2f59.jpg
+│   │   ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.c3ef2f8695ac6070253fc3d5120d42e8.jpg
+│   │   ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.862bac774dba12d23c7567a901f9962a.jpg
+│   │   ├── 📄 yawn-930e3cfe-3043-11ec-ad5b-302432df5bc8_jpg.rf.576106b54b5df27f8cdff98dcb3a4bc8.jpg
+│   │   ├── 📄 yawn-944fba00-3043-11ec-8bc6-302432df5bc8_jpg.rf.032ea1065bcd12ee358be4455bde88c2.jpg
+│   │   ├── 📄 yawn-de0de3fe-3042-11ec-8ef8-302432df5bc8_jpg.rf.024fe6ea34a26cbb43d51dff964960ac.jpg
+│   │   ├── 📄 yawn-ea80a412-3041-11ec-8ed0-302432df5bc8_jpg.rf.50ef523b47998c87d8a49188e462fe71.jpg
+│   │   ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.49a4d96398a38a39036c5b7e0db8c449.jpg
+│   │   └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.38276c85564bcdd5a53eb765b6f6ad5b.jpg
+│   └── 📁 labels
+│       ├── 📄 closed-eye-8737adc6-3043-11ec-a72a-302432df5bc8_jpg.rf.b27fba558b359e867a38728a680b3ff7.txt
+│       ├── 📄 man-yawning-looking-in-the-mirror_jpg.rf.decc603a4965e0c1af01d0aa4ab8d531.txt
+│       ├── 📄 P1043106_720_mp4-227_jpg.rf.d53b8417178daa9182a5ce1c4222a343.txt
+│       ├── 📄 P1043106_720_mp4-242_jpg.rf.cc9d484a64b7b4409acd32d7225f2f59.txt
+│       ├── 📄 WIN_20211018_21_12_44_Pro_jpg.rf.c3ef2f8695ac6070253fc3d5120d42e8.txt
+│       ├── 📄 WIN_20211018_21_13_01_Pro_jpg.rf.862bac774dba12d23c7567a901f9962a.txt
+│       ├── 📄 yawn-930e3cfe-3043-11ec-ad5b-302432df5bc8_jpg.rf.576106b54b5df27f8cdff98dcb3a4bc8.txt
+│       ├── 📄 yawn-944fba00-3043-11ec-8bc6-302432df5bc8_jpg.rf.032ea1065bcd12ee358be4455bde88c2.txt
+│       ├── 📄 yawn-de0de3fe-3042-11ec-8ef8-302432df5bc8_jpg.rf.024fe6ea34a26cbb43d51dff964960ac.txt
+│       ├── 📄 yawn-ea80a412-3041-11ec-8ed0-302432df5bc8_jpg.rf.50ef523b47998c87d8a49188e462fe71.txt
+│       ├── 📄 yawn-fedadf40-3044-11ec-b941-302432df5bc8_jpg.rf.49a4d96398a38a39036c5b7e0db8c449.txt
+│       └── 📄 yawn-ff7848f6-3044-11ec-97b0-302432df5bc8_jpg.rf.38276c85564bcdd5a53eb765b6f6ad5b.txt
+├── 📄 convert.py
+├── 📄 data.yaml
+├── 📄 detect.py
+├── 📄 drowsiness.py
+├── 📄 file_structure.py
+├── 📄 README.md
+├── 📄 train.py
+└── 📄 version1.py

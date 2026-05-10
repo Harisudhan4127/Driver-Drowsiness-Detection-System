@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Model Weights
+*.pt
+*.pth
+*.onnx
+
+# YOLO Outputs
+runs/
+
+# Build Files
+build/
+dist/
+*.spec
+
+# Environment Variables
+.env
+
+# Cache
+*.cache
+
+# System Files
+Thumbs.db
+.DS_Store
