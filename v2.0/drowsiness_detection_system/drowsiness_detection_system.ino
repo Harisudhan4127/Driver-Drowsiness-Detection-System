@@ -19,8 +19,8 @@
 
 // ─── WiFi Credentials ────────────────────────────────────────
 //  Replace with your network details before uploading.
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID "HOME"
+#define WIFI_PASSWORD "Home@4127"
 
 // ─── Stream quality (trade-off: quality vs FPS) ──────────────
 //  Options: FRAMESIZE_QVGA(320x240), FRAMESIZE_VGA(640x480),
