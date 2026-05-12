@@ -2,7 +2,7 @@
 #  DRIVER DROWSINESS DETECTION SYSTEM  v2.0
 #  Detection  : MediaPipe Face Mesh  +  EAR Algorithm
 #  UI         : PyQt5  —  Dark Data-Centric Dashboard
-#  Author     : github.com/your-username
+#  Author     : gith ub.com/your-username
 # =============================================================
 
 import sys

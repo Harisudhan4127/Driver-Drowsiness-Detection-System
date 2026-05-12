@@ -718,7 +718,7 @@ class DrowsinessApp(QWidget):
         # ── IP / Index row ────────────────────────
         self._ip_label = fluent_label("IP / INDEX", bold=True, color=F["text_second"])
         lo.addWidget(self._ip_label)
-        self._ip_edit = QLineEdit("192.168.1.5")
+        self._ip_edit = QLineEdit("10.25.251.168")
         self._ip_edit.setFixedWidth(145)
         lo.addWidget(self._ip_edit)
 
@@ -937,8 +937,8 @@ class DrowsinessApp(QWidget):
         self._path_edit.setVisible(is_wireless)
 
         if is_wireless:
-            self._ip_edit.setText("192.168.1.5")
-            self._ip_edit.setPlaceholderText("192.168.1.5")
+            self._ip_edit.setText("10.25.251.168")
+            self._ip_edit.setPlaceholderText("10.25.251.168")
         elif is_wired:
             self._ip_edit.setText("0")
             self._ip_edit.setPlaceholderText("Camera index  (0, 1, 2 …)")

@@ -3,11 +3,12 @@
 
 # Core vision & detection
 opencv-python>=4.8.0
-mediapipe>=0.10.0
 numpy>=1.24.0
+mediapipe==0.10.9
+
 
 # GUI
-PyQt5>=5.15.0
+PyQt5>=5.15.9
 
 # Optional: faster math (numpy covers the same functions)
 # scipy>=1.11.0
